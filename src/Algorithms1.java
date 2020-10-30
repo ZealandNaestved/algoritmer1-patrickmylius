@@ -25,6 +25,9 @@ public class Algorithms1 {
 
     // TODO 8 - Skriv en  plet eller krone generator metode (plet er boolean true og krone er boolean false)
 
+    Random rand = new Random();
+
+
     public static void main(String[] args) {
         //execute method exampleOfPredicatableRandomNumber
         exampleOfPredictableRandomNumber();
@@ -60,7 +63,6 @@ public class Algorithms1 {
     //Method randomBoyName use getters from Data class
     //returns a random boy name
     public String randomBoyName() {
-        Random rand = new Random();
         String[] boyName = new Data().getRandomDrengeNavne();
 
         return boyName[rand.nextInt(boyName.length)];
@@ -69,7 +71,6 @@ public class Algorithms1 {
     //Method randomGirlName use getters from Data class
     //returns a random girl name
     public String randomGirlName() {
-        Random rand = new Random();
         String[] girlName = new Data().getRandomPigeNavne();
 
         return girlName[rand.nextInt(girlName.length)];
