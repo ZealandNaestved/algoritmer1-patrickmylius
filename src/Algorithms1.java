@@ -16,7 +16,7 @@ public class Algorithms1 {
     // TODO 2 - Skriv en randomBoyName() metode i Algorithms1, som returnerer et tilfældigt drengenavn fra Data klassens randomDrengeNavne property OBS: randomDrengeNavne skal forblive private!
 
     public String randomBoyName() {
-
+        String peter;
         String[] names;
         Data data = new Data();
         names = data.getRandomDrengeNavne();
