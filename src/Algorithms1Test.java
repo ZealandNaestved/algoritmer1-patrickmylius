@@ -9,9 +9,8 @@ class Algorithms1Test {
         Algorithms1 testName = new Algorithms1(); //Object of Algoritmhs1
 
         testName.rand.setSeed(15L); //Sets seed, to generate a "Specific" random numb. O.O
-        testName.rand.nextInt(10);
 
-        Assertions.assertEquals("Blær", testName.randomBoyName());
+        Assertions.assertEquals("Life", testName.randomBoyName());
     }
 
     //Testing randomGirlName
