@@ -14,10 +14,12 @@ class Algorithms1Test {
         Assertions.assertEquals("Blær", testName.randomBoyName());
     }
 
+    //Testing randomGirlName
     @Test
     void randomGirlName() {
     }
 
+    //Testing randomName
     @Test
     void randomName() {
     }
