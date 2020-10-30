@@ -9,36 +9,15 @@ import java.util.Random;
 
 public class Algorithms1 {
 
-    Random rand = new Random();
+    //1 - Gennemse Data klassen, og skriv gode kommentarer til det
 
-    // TODO 1 - Gennemse Data klassen, og skriv gode kommentarer til det
-
-    // TODO 2 - Skriv en randomBoyName() metode i Algorithms1, som returnerer et tilfældigt drengenavn fra Data klassens randomDrengeNavne property OBS: randomDrengeNavne skal forblive private!
-
-    public String randomBoyName() {
-        String peter;
-        String[] names;
-        Data data = new Data();
-        names = data.getRandomDrengeNavne();
-        // LASSE names = new Data().getRandomDrengeNavne();
-
-        int arrayLength = names.length;
-        int randomInt = rand.nextInt(arrayLength);
-        String randomName = names[randomInt];
-        return randomName;
-        // LASSE return names[rand.nextInt(names.length)];
-    }
+    //2 - Skriv en randomBoyName() metode i Algorithms1, som returnerer et tilfældigt drengenavn fra Data klassens randomPigeNavne property OBS: randomPigeNavne skal forblive private!
 
     // TODO 3 - Skriv en test til randomBoyName() metoden HINT: Se metoden exampleOfPredictableRandomNumber() for at se, hvordan du kan lave et tilfældigt nummer som er altid det samme (til test)
-    // Se løsning test klassen Algorithms1Test
 
-    // TODO 4 - Skriv en randomGirlName() metode i Algorithms1, som returnerer et tilfældigt pigenavn fra Data klassen
-    public String randomGirlName() {
-        String[] names;
-        names = new Data().getRandomPigeNavne();
-        return names[rand.nextInt(names.length)];
-    }
-    // TODO 5 - Skriv en randomName() metode i Algorithms1, som laver et sammenlagt array som indeholder både piger og drenge, og returnerer det
+    //4 - Skriv en randomGirlName() metode i Algorithms1, som returnerer et tilfældigt pigenavn fra Data klassen
+
+    // 5 - Skriv en randomName() metode i Algorithms1, som laver et sammenlagt array som indeholder både piger og drenge, og returnerer det
 
     // TODO 6 - Skriv en test til randomName() metoden
 
@@ -46,21 +25,75 @@ public class Algorithms1 {
 
     // TODO 8 - Skriv en  plet eller krone generator metode (plet er boolean true og krone er boolean false)
 
-    // TODO 9 - Lav en ny array i Data klassen, som skal indeholde navne på medlemmer af din gruppe. Lav metoden whoShall() i Algorithms1, som skal returnere et navn fra gruppen
-
-    // TODO 10 - Lav en method override til whoShall() således, at den kan tage imod "int n". Nu skal metoden returnere et array med n elementer, som skal være et tilfældigt navn hver
-
     public static void main(String[] args) {
+        //execute method exampleOfPredicatableRandomNumber
         exampleOfPredictableRandomNumber();
-        Algorithms1 a1 = new Algorithms1();
-        System.out.println("Et random navn er " + a1.randomBoyName());
+
+        //Execute method randomBoyName + randomGirlName, sets results to String boy and girl
+        Algorithms1 algo1 = new Algorithms1();
+        String boy = algo1.randomBoyName();
+        String girl = algo1.randomGirlName();
+        //souts results of random names
+        System.out.println(boy);
+        System.out.println(girl);
+
+        //Declare new arrays, copying array getters from Data class
+        String[] boyNames = new Data().getRandomDrengeNavne();
+        String[] girlNames = new Data().getRandomPigeNavne();
+        //Executes randomName method with boyNames and girlnames
+        //sets result to unisexNames
+        String[] unisexNames = algo1.randomName(boyNames, girlNames);
+
+        //For loop, souts all names in new array
+        for (int i = 0; i < 89; i++) {
+            System.out.println(unisexNames[i]);
+        }
     }
 
     private static void exampleOfPredictableRandomNumber() {
         Random random = new Random();
-        random.setSeed(7); // Hvis vi angiver et seed som et long number, vil random klassen altid generere det samme tal, i det her tilfælde 21
+        random.setSeed(15L); // Hvis vi angiver et seed som et long number, vil random klassen altid generere det samme tal, i det her tilfælde 21
         System.out.print("Hvis vi bruger seed, vil random altid returnere de samme værdier, f.eks. giver denne 21 --> ");
         System.out.println(random.nextInt(45));
+    }
+
+    //Method randomBoyName use getters from Data class
+    //returns a random boy name
+    public String randomBoyName() {
+        Random rand = new Random();
+        String[] boyName = new Data().getRandomDrengeNavne();
+
+        return boyName[rand.nextInt(boyName.length)];
+    }
+
+    //Method randomGirlName use getters from Data class
+    //returns a random girl name
+    public String randomGirlName() {
+        Random rand = new Random();
+        String[] girlName = new Data().getRandomPigeNavne();
+
+        return girlName[rand.nextInt(girlName.length)];
+    }
+
+    public String[] randomName(String[] arr1, String[] arr2) {
+
+        //declare length to be arr1 + arr 2 lengths
+        int length = arr1.length + arr2.length;
+        //declare new array randName sets length to be equal to boyName and girlName array
+        String[] randName = new String[length];
+        int position = 0;
+
+        //for loop, copying elements from old boyName array to randName array
+        for (String element : arr1) {
+            randName[position] = element;
+            position++; //increase position by 1 for each run through
+        }
+        //for loop, copying elements from old girlName array to randName array
+        for (String element : arr2) {
+            randName[position] = element;
+            position++;
+        }
+        return randName;
     }
 
 }
