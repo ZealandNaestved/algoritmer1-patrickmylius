@@ -43,8 +43,8 @@ class Algorithms1Test {
         String[] testNewArr = testRandomName.randomName(testBoy, testGirl);
 
         //souts new arr values
-        for (int i = 0; i < testNewArr.length; i++) {
-            System.out.println(testNewArr[i]);
+        for (String s : testNewArr) {
+            System.out.println(s);
         }
 
         //Test if expected is equal to actual
