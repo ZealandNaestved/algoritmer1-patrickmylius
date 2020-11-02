@@ -19,7 +19,7 @@ public class Algorithms1 {
 
     //5 - Skriv en randomName() metode i Algorithms1, som laver et sammenlagt array som indeholder både piger og drenge, og returnerer det
 
-    // TODO 6 - Skriv en test til randomName() metoden
+    //6 - Skriv en test til randomName() metoden
 
     // TODO 7 - Skriv en random bogstavs-generator metode (du kan tage udgangspunkt i randomNumbers() i Data)
 
