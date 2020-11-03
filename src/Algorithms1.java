@@ -51,6 +51,11 @@ public class Algorithms1 {
         for (int i = 0; i < 89; i++) {
             System.out.println(unisexNames[i]);
         }
+
+        //Call static char method, generates random char
+        char randomChar = randomChar();
+        System.out.println(randomChar);
+
     }
 
     private static void exampleOfPredictableRandomNumber() {
@@ -95,6 +100,17 @@ public class Algorithms1 {
             position++;
         }
         return randName;
+    }
+
+    //Method generating random char
+    private static char randomChar() {
+        Random rand = new Random();
+        System.out.println("Generating random char..");
+
+        //generating random char, from 0 - 26 in ab, starting a.
+        char c = (char) ('a' + rand.nextInt(26));
+
+        return c;
     }
 
 }
