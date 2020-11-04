@@ -21,9 +21,9 @@ public class Algorithms1 {
 
     //6 - Skriv en test til randomName() metoden
 
-    // TODO 7 - Skriv en random bogstavs-generator metode (du kan tage udgangspunkt i randomNumbers() i Data)
+    //7 - Skriv en random bogstavs-generator metode (du kan tage udgangspunkt i randomNumbers() i Data)
 
-    // TODO 8 - Skriv en  plet eller krone generator metode (plet er boolean true og krone er boolean false)
+    //8 - Skriv en  plet eller krone generator metode (plet er boolean true og krone er boolean false)
 
     Random rand = new Random();
 
@@ -55,6 +55,16 @@ public class Algorithms1 {
         //Call static char method, generates random char
         char randomChar = randomChar();
         System.out.println(randomChar);
+
+        //run flip a coin method, set the result of method to boolean flipACoin
+        //If flipACoin is true, tails wins
+        //if flipACoin is false, coin wins
+        boolean flipACoin = flipAcoin();
+        if (flipACoin) {
+            System.out.println("Tails!");
+        } else
+            System.out.println("Coin!");
+
 
     }
 
@@ -111,6 +121,26 @@ public class Algorithms1 {
         char c = (char) ('a' + rand.nextInt(26));
 
         return c;
+    }
+
+    private static boolean flipAcoin() {
+        //declare random class and booleans
+        Random rand = new Random();
+        int coin = 0;
+        int tail = 1;
+
+
+        System.out.println("Flipping coin.......");
+        //choosing randomly between coin and tails
+        int flipCoin = rand.nextInt(2);
+
+        //if result is coin = false;
+        if (flipCoin == coin) {
+            return false;
+        } else
+            return
+                    true;
+
     }
 
 }
