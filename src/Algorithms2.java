@@ -8,24 +8,35 @@
 public class Algorithms2 {
     public static void main(String[] args) {
         int[] randomNumbers1000 = new Data().getRandomNumbers1000();
+        String[] randomBoyNames = new Data().getRandomDrengeNavne();
         linearSearch(randomNumbers1000);
+        linearSearch(randomBoyNames);
     }
 
-    //Method searching for the value "77"
+    //Method linear searching for its expectedResult = 77
     //1 Skriv en metode her i denne klasse, som kan finde et tal i Data klassens randomNumbers1000 felt med LINEAR SEARCH
     public static void linearSearch(int[] randomNumbers1000) {
-        int value = 77;
-        //runs value agaisnt all numbs in randomNumbers1000 array
+        int expectedResult = 77;
+        //runs expectedResult agaisnt all numbs in randomNumbers1000 array
         for (int i = 0; i < randomNumbers1000.length; i++) {
-            if (randomNumbers1000[i] == value) {
-                System.out.println("Number: " + value + " found in randomNumbers1000");
-            } else
-                System.out.println(" ");
+            if (randomNumbers1000[i] == expectedResult) {
+                System.out.println("Number: " + expectedResult + " found in randomNumbers1000");
+            } else continue;
         }
     }
 
-    // TODO 2 Skriv en metode her i denne klasse, som kan finde et navn i Data klassens randomDrengeNavne felt med LINEAR SEARCH
+    //2 Skriv en metode her i denne klasse, som kan finde et navn i Data klassens randomDrengeNavne felt med LINEAR SEARCH
+    //Method searching for its expectedResult = "Awesome".
+    public static void linearSearch(String[] randomBoyNames) {
+        String expectedResult = "Awesome";
+        //runs expectedResult agaisnt all strings in randomDrengeNavne.
+        for (int i = 0; i < randomBoyNames.length; i++) {
+            if (randomBoyNames[i] == expectedResult) {
+                System.out.println("Boy name: " + expectedResult + " found in randomDrengeNavne");
+            } else continue;
 
+        }
+    }
     // TODO 3 Skriv en metode her i denne klasse, som kan returnere et sorteret array fra randomNumbers1000
 
     // TODO 3 Skriv en metode her i denne klasse, som kan returnere et sorteret array fra randomDrengeNavne
