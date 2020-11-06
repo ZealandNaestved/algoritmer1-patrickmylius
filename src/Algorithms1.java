@@ -99,12 +99,12 @@ public class Algorithms1 {
         String[] randName = new String[length];
         int position = 0;
 
-        //for loop, copying elements from old boyName array to randName array
+        //for each loop, copying elements from old boyName array to randName array
         for (String element : arr1) {
             randName[position] = element;
             position++; //increase position by 1 for each run through
         }
-        //for loop, copying elements from old girlName array to randName array
+        //for each loop, copying elements from old girlName array to randName array
         for (String element : arr2) {
             randName[position] = element;
             position++;
